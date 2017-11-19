@@ -8,46 +8,65 @@
     tools:context="com.example.rama.smarthealth.MainActivity"
     android:background="@drawable/heart"
     android:icon="@drawable/heart"
-    android:weightSum="1">
+    android:weightSum="1"
+    android:baselineAligned="false">
 
     <ImageView
         android:id="@+id/prof_pic"
-        android:layout_width="184dp"
-        android:layout_height="wrap_content"
-        android:src="@drawable/photo" />
+        android:layout_width="178dp"
+        android:layout_height="79dp"
+        android:layout_gravity="center"
+        android:src="@drawable/photo"
+        android:layout_weight="0.34" />
 
 
     <TextView
         android:id="@+id/name"
-        android:layout_width="wrap_content"
+        android:layout_width="211dp"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="Name displayed here"
         android:textSize="18dp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:layout_weight="0.19"
+        android:textColor="#FFFFFF"/>
 
     <TextView
         android:id="@+id/email"
-        android:layout_width="wrap_content"
+        android:layout_width="211dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="0dp"
         android:gravity="center"
         android:text="Email displayed here"
         android:textSize="12dp"
-        android:textStyle="bold" />
-
-    <Button
-        android:id="@+id/bn_logout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="Logout" />
+        android:textStyle="bold"
+        android:layout_weight="0.29"
+        android:textColor="#FFFFFF"/>
 
     <Button
         android:id="@+id/button"
-        android:layout_width="wrap_content"
+        android:layout_width="110dp"
         android:layout_height="wrap_content"
-        android:text="ShareIt" />
+        android:text=" Share It" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:text="Analytics" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:text="Set Alarm" />
+
+    <Button
+        android:id="@+id/bn_logout"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Logout" />
 
     <com.google.android.gms.common.SignInButton
         android:layout_width="match_parent"

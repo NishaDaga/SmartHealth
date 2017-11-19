@@ -33,6 +33,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private GoogleApiClient googleApiClient;
     private static  final int REQ_CODE = 9001;
     private Button bt;
+    private Button qw;
+    private Button sa;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,14 +49,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Email = (TextView)findViewById(R.id.email);
         Prof_Pic = (ImageView)findViewById(R.id.prof_pic);
         bt = (Button)findViewById(R.id.button);
+        qw = (Button)findViewById(R.id.button2);
+        sa = (Button)findViewById(R.id.button3);
+
         SignIn.setOnClickListener(this);
         SignOut.setOnClickListener(this);
         bt.setOnClickListener(this);
+        qw.setOnClickListener(this);
+        sa.setOnClickListener(this);
+
         Prof_Pic.setVisibility(View.GONE);
         Name.setVisibility(View.GONE);
         Email.setVisibility(View.GONE);
         SignOut.setVisibility(View.GONE);
         bt.setVisibility(View.GONE);
+        qw.setVisibility(View.GONE);
+        sa.setVisibility(View.GONE);
+
+
         //Prof_Section.setVisibility(View.GONE);
         GoogleSignInOptions signInOptions = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail().build();
         googleApiClient = new GoogleApiClient.Builder(this).enableAutoManage(this,this).addApi(Auth.GOOGLE_SIGN_IN_API,signInOptions).build();
@@ -75,8 +89,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.button:
                 shareIt();
                 break;
+            case R.id.button2:
+                ana();
+                break;
+            case R.id.button3:
+                salr();
+                break;
         }
     }
+
+    private void salr() {
+        Intent aa = new Intent(MainActivity.this, Main2Activity.class);
+        startActivity(aa);
+    }
+
+    private void ana() {
+    }
+
     private void shareIt() {
         Intent myIntent = new Intent(Intent.ACTION_SEND);
         myIntent.setType("text/plain");
@@ -130,6 +159,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Email.setVisibility(View.VISIBLE);
             SignOut.setVisibility(View.VISIBLE);
             bt.setVisibility(View.VISIBLE);
+            qw.setVisibility(View.VISIBLE);
+            sa.setVisibility(View.VISIBLE);
+
+
             SignIn.setVisibility(View.GONE);
 
         }
@@ -141,6 +174,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Email.setVisibility(View.GONE);
             SignOut.setVisibility(View.GONE);
             bt.setVisibility(View.GONE);
+            qw.setVisibility(View.GONE);
+            sa.setVisibility(View.GONE);
+
             SignIn.setVisibility(View.VISIBLE);
         }
     }
